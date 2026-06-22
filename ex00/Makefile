@@ -1,10 +1,10 @@
-NAME = Bureacrat
+NAME = Bureaucrat
 SRC_DIR	= src
 INC_DIR	= include
 OBJ_DIR	= obj
 
 SRC =	main.cpp \
-		Bureacrat.cpp \
+		Bureaucrat.cpp \
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
