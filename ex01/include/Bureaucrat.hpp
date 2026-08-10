@@ -1,8 +1,12 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <string>
 #include <iostream>
+#include <string>
+#include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -15,24 +19,28 @@ class Bureaucrat
 		Bureaucrat(const std::string& targetName, int targetGrade);
 		Bureaucrat& operator=(const Bureaucrat& other);
 		~Bureaucrat();
-
+		
 		std::string getName() const;
 		int getGrade() const;
+
+		void signForm(Form &form);
 
 		void incrementGrade();
 		void decrementGrade();
 
-		class GetTooHighException : public std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
 
-		class GetTooLowException : public std::exception
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
-		}
+		};
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif

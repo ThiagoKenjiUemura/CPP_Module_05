@@ -9,8 +9,8 @@ Bureaucrat::Bureaucrat(const std::string& targetName, int targetGrade) : _name(t
 {
 	std::cout << "Bureaucrat Parametrized constructor called"<< std::endl;
 	if (_grade < 1) {
-        throw Bureaucrat::GradeTooHighException();
-    }
+		throw Bureaucrat::GradeTooHighException();
+	}
 	else if (_grade > 150){
 		throw Bureaucrat::GradeTooLowException();
 	}
@@ -36,7 +36,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
 	return this->_name;
 }
@@ -72,6 +72,6 @@ void Bureaucrat::decrementGrade()
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
 {
-	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()  << ".";
+	os << bureaucrat.getName() << ", burocrata com classificação " << bureaucrat.getGrade()  << ".";
 	return os;
 }

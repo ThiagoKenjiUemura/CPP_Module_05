@@ -11,7 +11,7 @@ int main()
 	}
 	catch (const std::exception& e) 
 	{
-		std::cerr << "" << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << "\n--- TESTE 2: Incrementando além do limite ---" << std::endl;
