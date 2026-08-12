@@ -5,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 	std::cout << "Default ShrubberyCreationForm Constructor called." << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("ShruberryCreaitionForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout << "ShrubberycreationForm Parametrized Constructor called." << std::endl;
 }
@@ -19,8 +19,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	std::cout << "ShrubberyCreationForm Copy Assignment operator called." << std::endl;
 	if (this != &other)
+	{
 		AForm::operator=(other);
-	this->_target = other._target;
+		this->_target = other._target;
+	}
 	return *this;
 }
 
